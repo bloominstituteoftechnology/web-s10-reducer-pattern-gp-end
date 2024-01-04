@@ -10,12 +10,10 @@ const initialState = {
 
 const reducer = (state, action) => {
   switch (action.type) {
-    case CHANGE_LABEL: {
+    case CHANGE_LABEL:
       return { ...state, todoLabel: action.payload }
-    }
-    case CHANGE_IS_COMPLETED: {
+    case CHANGE_IS_COMPLETED:
       return { ...state, todoIsCompleted: action.payload }
-    }
     default:
       return state
   }
