@@ -19,10 +19,9 @@ const initialState = {
 
 const reducer = (state, action) => {
   switch (action.type) {
-    case ADD_NEW_TODO: {
+    case ADD_NEW_TODO:
       return { ...state, todos: [...state.todos, action.payload] }
-    }
-    case TOGGLE_TODO: {
+    case TOGGLE_TODO:
       return {
         ...state,
         todos: state.todos.map(td => {
@@ -30,13 +29,11 @@ const reducer = (state, action) => {
           return { ...td, complete: !td.complete }
         })
       }
-    }
-    case TOGGLE_SHOW_COMPLETED_TODOS: {
+    case TOGGLE_SHOW_COMPLETED_TODOS:
       return {
         ...state,
         showCompletedTodos: !state.showCompletedTodos
       }
-    }
     default:
       return state
   }
