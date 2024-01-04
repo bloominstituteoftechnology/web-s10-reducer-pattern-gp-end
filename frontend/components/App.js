@@ -8,7 +8,7 @@ const TOGGLE_TODO = 'TOGGLE_TODO'
 
 let id = 1
 const getNextId = () => id++
-const initialTodos = {
+const initialState = {
   showCompletedTodos: true,
   todos: [
     { id: getNextId(), label: 'Laundry', complete: true },
@@ -43,7 +43,7 @@ const reducer = (state, action) => {
 }
 
 export default function App() {
-  const [state, dispatch] = useReducer(reducer, initialTodos)
+  const [state, dispatch] = useReducer(reducer, initialState)
 
   const createNewTodo = (label, complete) => {
     const newTodo = { id: getNextId(), label, complete }
